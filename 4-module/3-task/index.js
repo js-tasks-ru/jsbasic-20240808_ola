@@ -20,7 +20,7 @@ function highlight(table) {
           } else if (cell.dataset.available == 'false') {
             row.classList.add('unavailable');
           } else {
-            row.setAttribute('hidden', '');
+            row.hidden = true;
           }
           break;
       }

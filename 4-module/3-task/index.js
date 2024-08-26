@@ -1,7 +1,7 @@
 function highlight(table) {
-  Array.from(table.rows).forEach((row, rowIndex) => {
-    Array.from(row.cells).forEach((cell, cellIndex) => {
-      switch (cellIndex) {
+  Array.from(table.rows).forEach((row) => {
+    Array.from(row.cells).forEach((cell) => {
+      switch (cell.cellIndex) {
         case 1:
           if (cell.textContent < 18) {
             row.style.textDecoration = 'line-through';

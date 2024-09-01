@@ -1,3 +1,9 @@
 function makeDiagonalRed(table) {
-  // ваш код...
+  Array.from(table.rows).forEach((row) => {
+    Array.from(row.cells).forEach((cell) => {
+      if (cell.cellIndex == row.rowIndex) {
+        cell.style.backgroundColor = 'red';
+      }
+    });
+  });
 }

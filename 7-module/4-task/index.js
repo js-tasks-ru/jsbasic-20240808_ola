@@ -95,7 +95,7 @@ export default class StepSlider {
   }
 
   #getLeftPosition(pageX) {
-    return (pageX - this.elem.offsetLeft) / this.elem.offsetWidth;
+    return (pageX - this.elem.getBoundingClientRect().left) / this.elem.offsetWidth;
     /*
     вообще тут хотелось бы не писать этот отдельный метод, и не высчитывать это перед каждым вызовом #setValue, а просто перенести это в саму функцию #setValue, я изначально так сделала (в файле index_bck.js), но в таком случае выдает ошибку на строке 14, из-за того, что this.elem.offsetWidth не высчитывается. Т.е. это работает только после каких-то событий (как в методах #onClick, #onMove, #onUp), а в контрукторе как-будто элемент еще не построен, хотя this.elem = this.#render() идет до вызова this.#setValue(). есть какое-то решение, или мы не можем никак получать размеры/положение this.elem в контрукторе?
     */

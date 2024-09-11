@@ -34,7 +34,7 @@ export default class StepSlider {
   }
 
   #changeSlider = ({pageX}) => {
-    let leftPosition = (pageX - this.elem.offsetLeft) / this.elem.offsetWidth;
+    let leftPosition = (pageX - this.elem.getBoundingClientRect().left) / this.elem.offsetWidth;
     let currentStep = Math.round(leftPosition * this.stepsSections);
 
     this.#setValue(currentStep);

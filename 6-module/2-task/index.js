@@ -9,7 +9,7 @@ export default class ProductCard {
 
   template(product) {
     return `
-      <div class="card">
+      <div class="card" data-nuts="${product.nuts}" data-vegeterian="${product.vegeterian}" data-spiciness="${product.spiciness}" data-category="${product.category}">
           <div class="card__top">
               <img src="/assets/images/products/${product.image}" class="card__image" alt="product">
               <span class="card__price">€${product.price.toFixed(2)}</span>

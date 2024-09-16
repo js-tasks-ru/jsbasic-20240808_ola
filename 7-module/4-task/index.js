@@ -11,7 +11,9 @@ export default class StepSlider {
     this.valueShow = this.elem.querySelector('.slider__value');
     this.stepsItems = this.elem.querySelectorAll('.slider__steps span');
     this.stepsSections = this.steps - 1;
-    this.#setValue(0);
+
+    let startLeftPosition = this.value / this.stepsSections;
+    this.#setValue(startLeftPosition);
     this.#eventListeners();
   }
 

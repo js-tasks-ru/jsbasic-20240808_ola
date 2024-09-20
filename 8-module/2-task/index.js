@@ -34,7 +34,7 @@ export default class ProductGrid {
         return this.filters.vegeterianOnly ? product.vegeterian === this.filters.vegeterianOnly : true;
       })
       .filter(product => {
-        return this.filters.maxSpiciness ? product.spiciness <= this.filters.maxSpiciness : true;
+        return (this.filters.maxSpiciness >= 0) ? product.spiciness <= this.filters.maxSpiciness : true;
       })
       .filter(product => {
         return this.filters.category ? product.category === this.filters.category : true;
